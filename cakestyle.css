@@ -5,48 +5,68 @@
 }
 .body
   {
-    background-color: #fef8e0;
+    background-color: #eeb988;
     font-family: sans-serif;
     font-size: 16px;
 }
   
  .row1{
     display:flex;
-    justify-content: space-around;
-    text-align: center;
- }
+    justify-content: space-between;
 
+ }
+ .logo{
+    margin-left: 50px;
+ }
+.image{
+     margin-left: 100px;
+}
+  .signup{  
+     width: 100px;
+     height: 30px;
+     color:rgb(241, 17, 17);
+     border-radius: 5px;
+     text-align: center;
+     background-color: #6d885c;
+}
       .nav  ul li {
          text-decoration: none;
         display: inline;
-        
+        text-align: center;          
     }
     a{
         text-decoration: none;
-            margin: 10px;
+            margin: 5px;
             color: white;
+
     }
 .nav {
-    border-color: #88685c;
-    border-radius: 5px;
+    border-color: #e3a58e;
+    border-radius: 2px;
+    margin-left: 300px;
 }
 .header {
     margin-top: 20px;
          display: flex;
-           justify-content: space-around;
-          text-align: center;
+       
           text-decoration: none;
 }
- 
+.target {
+    padding: 10px;
+    background-color: #89685f;
+    color: #6d885c;
+  }
 .row2{
-    display : flex;
-        justify-content: space-around;
-    text-align: center;
+    margin-top: 20px;
+       display: flex;
+       justify-content: space-around;
+        text-align: center;
 }
-.buttons {
+.button{
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-top: 20px;
 }
 
 .getstarted {
@@ -55,8 +75,9 @@
     color: white;
     border-radius: 6px;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
     background-color: #88685c;
+    margin-top: 50px;
 }
 
 .watchmore {
@@ -65,9 +86,11 @@
     height: 30px;
     border-radius: 6px;
     text-align: center;
-    padding-top: 10px;
+    margin-top: 50px;
+    padding-top: 5px;
 }
 .row3{
+    margin-top: 20px;
     display:flex;
     justify-content: space-around;
     text-align: center;
@@ -79,15 +102,20 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    text-align: center  ;
+  padding-left: 5px;
 }
 
 .card {
-    width: 50%;
-    height: 50%;
+    margin-top: 20px;
+     padding-top: 2px;
+    width: 20%;
+    height: 20%;
     border: 2px solid #88685c;
     border-radius: 2px;
     box-shadow: 0 4px 8px rgba(111, 111, 111, 0.5);
-}
+    padding-left: 5px;
+}   
 
 .card b {
     padding-left: 5px;
@@ -98,5 +126,10 @@
     align-items: center;
 }
 
-
+.img{
+    margin-left: 100px;
+}
+.imgup{
+    margin-left: -10px;
+}
 
