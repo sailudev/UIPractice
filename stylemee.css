@@ -66,10 +66,11 @@ a{
     display: flex;
 }
 .button{
-    
+
     display: flex ;
     width :800px;
     height: 30px;
+    margin-top: 0px;
 }
 .getstarted{
     width: 500px;
@@ -80,20 +81,33 @@ a{
      padding-top: 10px;
      background-color:lightseagreen;
 }
+
+.box.recorded2{
+    display: flex;
+}
+
 .boxes{
-    margin-left: 50px;
+  margin-left: 50px;
     display: flex;
     
 }
-.updates{
+.watchmore{
   margin-top: 0;
-    width:300px;
+    width:400px;
     height: 30px;
     margin-left: 50px;
     border-radius: 6px;
     text-align: center;
-    padding-bottom: 50px;
+     padding-top: 10px;
+    
     background-color: purple;
 
 
+}
+.data{
+    text-align: center;
+    margin-left: 30px;
+}
+.recorded2{
+    margin-bottom: 750%;
 }
