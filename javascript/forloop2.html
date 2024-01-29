@@ -6,28 +6,40 @@
     <title>loop</title>
 </head>
 <body>
+
+
+
     <script>
-    for( i=1; i<=10; i++) 
-       
-        {
-            if(i%2==1)
-            
-                    
-            for(let j=1; j<=i;j++)
-            {
-            document.write("<span style='color:green'>*</span>");
+               for (let i = 1; i <= 10; i++)
+        if(i%2==1) {
+
+            for (let j = 1; j <= i; j++) {
+                console.log("i: " + i + "j: " + j);
+                document.write("<span style='color:red'>*</span>");
+
         }
-        document.write("<br>");
+    
+        
+            document.write("<br>");
     }
-    for(  i=10;i>=1;i--) 
-    {
-        if(i%2==1)
-       for(let j=1; j<=i; j++ )
-       {
-       document.write("*")
-       }
-       document.write("<br>")
+    
+
+        for (let i =10; i >= 1; i--) 
+        if(i%2==1){
+
+            for (let j = 1; j <= i; j++) {
+                console.log("i: " + i + "j: " + j);
+                document.write("<span style='color:blue'>*</span>");
+        }
+            
+    
+            document.write("<br>");
+
+
     }
+
     </script>
+
+  
 </body>
 </html>

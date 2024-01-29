@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+  <style>
+    .top{
+        width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: bisque;
+            border: 1px solid red;
+            position: absolute;
+            top:500px;
+            left:350px;
+        
+    }
+  </style>
+  <script>
+     function sayHello(){
+            alert('Hello');  //Internal Javascript
+        }
+
+        function hoverme(){
+            alert("mouse over event")
+        }
+        function hoverout(){
+            alert("mouse out event")
+        }
+        function sendmetop(){
+            document.getElementById("top").style.top="0px";
+            document.getElementById("top").style.transition=".6s";
+            document.getElementById("top").style.transform="scale(.5)";
+            document.getElementById("top").style.backgroundColor="blue";
+        }
+  </script>
+<body>
+    <h1 onclick="sayHello()">Click Me!</h1> <!--Inline Javascript--> 
+    <button onmouseover="hoverme()" onmouseout="hoverout()">On Hover</button>
+    <div class="top" id="top"  onmouseover="sendmetop()"></div>
+    
+</body>
+</html>
