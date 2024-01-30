@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse</title>
+    <style>
+        .image{
+            display: flex;
+            position: absolute;
+        }
+        .bigimage2{
+           visibility: hidden;
+           
+        }
+        .big{
+            position: absolute;
+            top:50px;
+            left: 150px;
+        }
+    </style>
+</head>
+<body>
+    
+  <div class="image"  >
+    <div class="smaimage1"  >
+       
+    <div class="small"id="small1" onmouseover="showimage(1)"><img  width="50" height="50" src="watch1.png"></div>
+    
+    <div class="small"id="small2" onmouseover="showimage(2)"><img  width="50" height="50" src="watch2.png"></div>
+    
+    <div class="small" id="small3" onmouseover="showimage(3)"><img  width="50" height="50" src="watch3.png"></div>
+    
+    <div class="small"id="small4" onmouseover="showimage(4)"><img  width="50" height="50" src="watch4.png"></div>
+    
+    <div class="small"id="small5" onmouseover="showimage(5)"><img  width="50" height="50" src="watch5.png"></div>
+    </div>
+    <div class="bigimage2" >
+
+    <div class="big"id="big1"style="visibility: visible;"><img  width="150" height="150" src="watch1.png"></div>
+    
+    <div class="big"id="big2"><img  width="150" height="150" src="watch2.png"></div>
+    
+    <div class="big"id="big3"><img  width="150" height="150" src="watch3.png"></div>
+    
+    <div  class="big"id="big4"><img  width="150" height="150" src="watch4.png"></div>
+    
+    <div class="big" id="big5"><img  width="150" height="150" src="watch5.png"></div>
+
+    </div>
+
+  </div>
+
+
+
+    <script>
+        function showimage(n){
+            
+         if(n==1){
+            document.getElementById("big1").style.visibility="visible";
+            document.getElementById("big2").style.visibility="hidden";
+            document.getElementById("big3").style.visibility="hidden";
+            document.getElementById("big4").style.visibility="hidden";
+            document.getElementById("big5").style.visibility="hidden";
+         }
+         else if(n==2){
+            document.getElementById("big1").style.visibility="hidden";
+            document.getElementById("big2").style.visibility="visible";
+            document.getElementById("big3").style.visibility="hidden";
+            document.getElementById("big4").style.visibility="hidden";
+            document.getElementById("big5").style.visibility="hidden";
+         }
+         else if(n==3){
+            document.getElementById("big1").style.visibility="hidden";
+            document.getElementById("big2").style.visibility="hidden";
+            document.getElementById("big3").style.visibility="visible";
+            document.getElementById("big4").style.visibility="hidden";
+            document.getElementById("big5").style.visibility="hidden";
+         }
+         else if(n==4){
+            document.getElementById("big1").style.visibility="hidden";
+            document.getElementById("big2").style.visibility="hidden";
+            document.getElementById("big3").style.visibility="hidden";
+            document.getElementById("big4").style.visibility="visible";
+            document.getElementById("big5").style.visibility="hidden";
+         }
+         else if(n==5){
+            document.getElementById("big1").style.visibility="hidden";
+            document.getElementById("big2").style.visibility="hidden";
+            document.getElementById("big3").style.visibility="hidden";
+            document.getElementById("big4").style.visibility="hidden";
+            document.getElementById("big5").style.visibility="visible";
+         }
+         }
+         
+         
+         
+        
+        
+        
+
+    </script>
+</body>
+</html>

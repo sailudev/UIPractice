@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>simple </title>
+</head>
+<body>
+    <h1> simple calculator</h1>
+    
+    <div id="result" > result:</div>
+    <br>
+    <button id="" onclick="appenddisplay('1')">1</button>
+    <button id="" onclick="appenddisplay('2')">2</button>
+    <button id="" onclick="appenddisplay('3')">3</button>
+    <button id="" onclick="appenddisplay('4')">4</button>
+    <button id="" onclick="appenddisplay('5')">5</button>
+    <button id="" onclick="appenddisplay('6')">6</button>
+    <button id="" onclick="appenddisplay('*')">*</button>
+    <button id="" onclick="appenddisplay('+')">+</button>
+    <button id="" onclick="appenddisplay('-')">-</button>
+    <button id="" onclick="appenddisplay('%')">%</button>
+    <button id="" onclick="cleardisplay()">C</button>
+    <button id="" onclick="calculateResult()">=</button>
+
+
+    <script>
+
+        function appenddisplay(){
+           document.getElementById('result').innerHTML='result'+result;
+
+        }
+        function cleardisplay(){
+           document.getElementById('result').innerHTML=''
+
+        }
+        function calculateResult(){
+            try{
+                document.getElementById('result').innerhtml=eval(document.getElementById('result').innerHTML)
+            }
+
+        }
+    </script>
+</body>
+</html>
