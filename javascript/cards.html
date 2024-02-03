@@ -4,57 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cards</title>
-</head>
 <style>
-         .container{
-            margin-top: 250px;
-            display: flex;
-            justify-content: space-around;
-        }
-        .item {
-            width: 200px;
-            height: 400px;
-            border: 1px solid black;
-            border-radius: 10px;
-            background-color: bisque;
-            margin-left: 25px;
-            margin-top: 50px;
-
-        }
-
-        .image1 {
-            width: 150px;
+    .container{
+        display: flex;
+    margin-top: 150px;
+    justify-content: space-around;
+    }
+                  
+     .item{
+        width:200px;
+        height: 500px;
+        border: 1px solid black;
+        background-color: burlywood;
+        border-radius: 10px;
+        margin-left: 25px;
+        margin-top: 50px;
+      }
+      .image1{
+        width: 150px;
             height: 150px;
-            background-color: brown;
+            background-color: rgb(225, 55, 55);
             border: 1px solid blue;
             margin-left: 25px;
             margin-top: 25px;
             background: url("image1.jpg") no-repeat;
 
-        }
-        .image2 {
-            width: 150px;
+      }
+      .image2{
+           width: 150px;
             height: 150px;
-            background-color: rgb(92, 70, 255);
+            background-color: rgb(135, 39, 39);
             border: 1px solid blue;
             margin-left: 25px;
             margin-top: 25px;
             background: url("image2.jpg") no-repeat;
-
-        }
-        .image3 {
+      }
+       .image3{
             width: 150px;
             height: 150px;
-            background-color: rgb(2, 110, 132);
+            background-color: rgb(135, 39, 39);
             border: 1px solid blue;
             margin-left: 25px;
             margin-top: 25px;
             background: url("image3.jpg") no-repeat;
-
-        }
-
-        .title {
-            text-align: center;
+      }
+      .title{
+        text-align: center;
             cursor: pointer;
             color: black;
             background-color: azure;
@@ -66,10 +61,9 @@
             height: 35px;
             border: 1px solid black;
 
-        }
-
-        .cart {
-            width: 50px;
+      }
+      .cart{
+        width: 50px;
             height: 50px;
             border: 1px solid black;
             background-color: burlywood;
@@ -81,10 +75,29 @@
             font-size: 40px;
             font-weight: bold;
 
+      }
+      .remove{
+        text-align: center;
+            cursor: pointer;
+            color: black;
+            background-color: azure;
+            border-radius: 6px;
+            font-size: 25px;
+            margin-left: 35px;
+            margin-top: 25px;
+            width: 120px;
+            height: 35px;
+            border: 1px solid black;
+            visibility: hidden;
+       
 
-        }
-        .total {
-            width: 200px;
+      }
+      .additem{
+        margin-top: 10px;
+        margin-left: 35px;
+      }
+      .total{
+        width: 200px;
             height: 50px;
             border: 1px solid black;
             background-color: burlywood;
@@ -95,12 +108,9 @@
             text-align: center;
             font-size: 40px;
             font-weight: bold;
-font-size: 22px;
-
-        }
-
-
-        .qty {
+             font-size: 22px;
+      }
+      .qty {
             margin-top: 10px;
             margin-left: 35px;
         }
@@ -112,44 +122,153 @@ font-size: 22px;
             text-align: center;
             margin-top: 10px;
         }
-    </style>
-    
+       
+       </style>
     <script>
-     function addcart(a){
-        let qty;
-        let price;
-        if(a==1){
-            qty= document.getElementById("qty1").value;
-            price= number(document.getElementById("price1").innerHTML)
-            price= qty*price;
-            document.getElementById("qty1").value=1;
+        let q1=0;
+        let q2=0;
+        let q3=0;
+     function addcart(a) {
+            let qty;
+            let price;
+            if(a==1){
+
+                 qty = Number(document.getElementById("qty1").value);
+                 q1=q1+qty
+                 price = Number(document.getElementById("price1").innerHTML)
+                 price = qty*price;
+                 document.getElementById("qty1").value = 1;
+                 document.getElementById("rb1").style.visibility='visible';
+                 document.getElementById("item1").style.visibility='visible';
+                 document.getElementById("rqty1").style.visibility="visible";
+                 document.getElementById("item1").innerHTML=q1;
+                 document.getElementById("rqty1").innerHTML="";
+            for(let i=1;i<=q1;i++){
+                document.getElementById("rqty1").innerHTML +="<option id='rq1' value="+i+">"+i+"</option>"
+
+            }
+            }
+            if(a==2){
+                qty =Number (document.getElementById("qty2").value);
+                q2=q2+qty;
+                price = Number(document.getElementById("price2").innerHTML)
+                price = qty*price;
+                document.getElementById("qty2").value = 1;
+                document.getElementById("rb2").style.visibility='visible';
+                document.getElementById("item2").style.visibility='visible';
+                document.getElementById("rqty2").style.visibility="visible";
+                document.getElementById("item2").innerHTML=q2;
+                document.getElementById("rqty2").innerHTML="";
+            for(let i=1;i<=q2;i++){
+                document.getElementById("rqty2").innerHTML +="<option id='rq2' value="+i+">"+i+"</option>"
+
+            }
+            }
+            if(a==3){
+                qty =Number( document.getElementById("qty3").value);
+                q3=q3+qty;
+                price = Number(document.getElementById("price3").innerHTML)
+                price = qty*price;                
+                document.getElementById("qty3").value = 1;
+                document.getElementById("rb3").style.visibility='visible';
+                document.getElementById("item3").style.visibility='visible';
+                document.getElementById("rqty3").style.visibility="visible";
+                document.getElementById("item3").innerHTML=q3;
+                document.getElementById("rqty3").innerHTML="";
+            for(let i=1;i<=q3;i++){
+                document.getElementById("rqty3").innerHTML +="<option id='rq3' value="+i+">"+i+"</option>"
+
+            }
+
+               
+            }
+            
+            let oldprice = Number(document.getElementById("totalprice").innerHTML)
+            let pastvalue = document.getElementById("cart").innerHTML;
+              qty = Number(qty);
+            pastvalue = Number(pastvalue);
+            
+             
+                document.getElementById("cart").innerHTML = pastvalue + qty;
+                document.getElementById("totalprice").innerHTML = price + oldprice; 
+         
         }
-        if(a==2){
-            qty= document.getElementById("qty2").value;
-            price= number(document.getElementById("price2").innerHTML)
-            price= qty*price;
-            document.getElementById("qty2").value=1;
+       
+        function remove(a){
+            
+            let removeprice;
+            if(a==1){
+              let rqty1=document.getElementById("rqty1").value;
+                
+                 removeprice = Number(document.getElementById("price1").innerHTML)*rqty1
+                 q1=q1-rqty1;
+                 let pastvalue = document.getElementById("cart").innerHTML;
+                 document.getElementById("cart").innerHTML = pastvalue-rqty1;
+                 document.getElementById("rqty1").innerHTML="";
+            for(let i=1;i<=q1;i++){
+                document.getElementById("rqty1").innerHTML +="<option id='rq1' value="+i+">"+i+"</option>"
+
+            }
+                 
+                 document.getElementById("item1").innerHTML=q1;
+                 if(q1<1){
+                    document.getElementById("rb1").style.visibility='hidden';
+                    document.getElementById("item1").style.visibility='hidden';
+                  
+                 }
+            }
+            if(a==2){
+                 let rqty2=Number(document.getElementById("rqty2").value);
+                
+                 removeprice = Number(document.getElementById("price2").innerHTML)*rqty2
+                 q2=q2-rqty2;
+                 let pastvalue = document.getElementById("cart").innerHTML;
+                 document.getElementById("cart").innerHTML = pastvalue-rqty2;
+                 document.getElementById("rqty2").innerHTML="";
+            for(let i=1;i<=q2;i++){
+                document.getElementById("rqty2").innerHTML +="<option id='rq2' value="+i+">"+i+"</option>"
+
+            }      
+                 document.getElementById("item2").innerHTML=q2;
+                 if(q2<1){
+                    document.getElementById("rb2").style.visibility='hidden';
+                    document.getElementById("item2").style.visibility='hidden';
+                 }
+            }
+            if(a==3){
+                let rqty3= Number(document.getElementById("rqty3").value);
+                 removeprice = Number(document.getElementById("price3").innerHTML)*rqty3
+                 q3=q3-rqty3;
+                 let pastvalue = document.getElementById("cart").innerHTML; 
+                 document.getElementById("cart").innerHTML = pastvalue-rqty3; 
+                 document.getElementById("rqty3").innerHTML="";
+            for(let i=1;i<=q3;i++){
+                document.getElementById("rqty3").innerHTML +="<option id='rq3' value="+i+">"+i+"</option>"
+
+            }        
+                 document.getElementById("item3").innerHTML = q3;
+                 if(q3<1){
+                    document.getElementById("rb3").style.visibility='hidden';
+                    document.getElementById("item3").style.visibility='hidden';
+                 }
+            }
+            let oldprice = Number(document.getElementById("totalprice").innerHTML)
+            let pastvalue=Number(document.getElementById("cart").innerHTML)
+            pastvalue=Number(pastvalue);
+                
+             document.getElementById("totalprice").innerHTML =  oldprice-removeprice; 
+         
+
         }
-        if(a==3){
-            qty= document.getElementById("qty3").value;
-            price= number(document.getElementById("price2").innerHTML)
-            price= qty*price;
-            document.getElementById("qty3").value=1;
-        }
-        let oldprice=number(document.getElementById("totalprice").innerhtml)
-        let pastvalue =document.getElementById('cart').innerHTML;
-        qty= Number(qty);
-        pastvalue=Number(pastvalue);
-        document.getElementById("cart").innerHTML= pastvalue + qty;
-        document.getElementById("totalprice").innerHTML=price+ oldprice;
-     }
+          
+
 </script>
+</head>
 <body>
-    
-    <div calss="container">
-        <div class="item">
+    <div class="container">
+     <div class="item">
             <div class="image1"></div>
-            <div class="qty">
+           <div class="qty">
                 <select  name="qty" id="qty1">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -159,7 +278,12 @@ font-size: 22px;
   
                 </select>
             <div class="price">price:<span id="price1">500</span></div>
-            <div class="title" onclick="addcart(1)"> Add Item</div>
+            <div class="title" onclick="addcart(1)"> AddItem</div>
+            <select  style="visibility: hidden;" name="" id="rqty1">
+
+            </select>
+            <div class="remove" id="rb1"onclick="remove(1)">Remove</div>
+            <div class="Additem" id="item1">additems</div>
             </div>
         </div>
         <div class="item">
@@ -174,7 +298,11 @@ font-size: 22px;
   
                 </select>
             <div class="price">price:<span id="price2">900</span></div>
-            <div class="title" onclick="addcart(2)"> Add Item</div>
+            <div class="title" onclick="addcart(2)"> AddItem</div>
+            <select  style="visibility: hidden;" name="" id="rqty2">
+            </select>
+            <div class="remove"  id="rb2"onclick="remove(2)">Remove</div>
+            <div class="Additem" id="item2">additems</div>
             </div>
         </div>
         <div class="item">
@@ -188,15 +316,21 @@ font-size: 22px;
                     <option value="5">5</option>
   
                 </select>
-            <div class="price">price:<span id="price1">1200</span></div>
-            <div class="title" onclick="addcart(3)"> Add Item</div>
+            <div class="price">price:<span id="price3">1200</span></div>
+            <div class="title" onclick="addcart(3)"> AddItem</div>
+            <select  style="visibility: hidden;" name="" id="rqty3">
+            </select>
+            <div class="remove" id="rb3" onclick="remove(3)">Remove</div>
+            <div class="Additem"id="item3">addeditems</div>
             </div>
-        </div>
+            </div>
+        </div> <div id="cart" class="cart">0</div>
 
-
-</div>
-<div id="cart" class="cart">0</div>
-
-<div class="total">Total Price: <span id="totalprice">0</span> </div>
+          <div class="total">Total Price: <span id="totalprice">0</span> </div>
+          </div>
+   
+   
+          
+    </div>
 </body>
 </html>

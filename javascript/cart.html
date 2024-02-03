@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>showcart</title>
+    <style>
+        .item{
+            margin-top: 150px;
+            display: flex;
+            justify-content: space-around;
+        }
+             
+     .image{
+        width:200px;
+        height: 500px;
+        border: 1px solid back;
+        background-color: burlywood;
+        border-radius: 10px;
+        margin-left: 25px;
+        margin-top: 50px;
+     }
+      .watch1{
+
+        width: 150px;
+            height: 250px;
+            background-color: rgb(225, 55, 55);
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("watch1.png") no-repeat;
+
+      }
+      .watch2{
+           width: 150px;
+            height: 250px;
+            background-color: rgb(135, 39, 39);
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("watch2.png") no-repeat;
+      }
+       .watch3{
+            width: 150px;
+            height: 250px;
+            background-color: rgb(135, 39, 39);
+            border: 1px solid blue;
+            margin-left: 25px;
+            margin-top: 25px;
+            background: url("watch3.png") no-repeat;
+      }
+      .title{
+        text-align: center;
+            cursor: pointer;
+            color: black;
+            background-color: azure;
+            border-radius: 6px;
+            font-size: 25px;
+            margin-left: 35px;
+            margin-top: 25px;
+            width: 120px;
+            height: 35px;
+            border: 1px solid black;
+
+      }
+      .cart{
+        width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: burlywood;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+
+      }
+      .remove{
+        text-align: center;
+            cursor: pointer;
+            color: black;
+            background-color: azure;
+            border-radius: 6px;
+            font-size: 25px;
+            margin-left: 35px;
+            margin-top: 25px;
+            width: 120px;
+            height: 35px;
+            border: 1px solid black;
+            visibility: hidden;
+       
+
+      }
+      .additem{
+        margin-top: 10px;
+        margin-left: 35px;
+      }
+      .total{
+        width: 200px;
+            height: 50px;
+            border: 1px solid black;
+            background-color: burlywood;
+            border-radius:6px;
+            position: absolute;
+            top: 80px;
+            right: 30px;
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+             font-size: 22px;
+      }
+      .qty {
+            margin-top: 10px;
+            margin-left: 35px;
+        }
+        
+        .price{
+            color: black;
+            font-size: 25px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 10px;
+        }
+       
+       </style>
+    
+</head>
+
+<body>
+    <div class="item">
+      <div class="image">
+        <div class="watch1"></div>
+        <div class="qty">
+            <select class="qty" id="qty1">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+         </div>
+          <div class="price">price:<span id="price1">500</span></div>
+           <div class="title" onclick="addcart(1)"> AddItem</div>
+           <div class="remove" id="rb1"style ="display:none" onclick="remove(1)">Remove</div>
+           <div class="title">additem=<span id="item1">q1</span></div>
+      </div>
+       <div class="image">
+            <div class="watch2"></div>
+           <div class="qty">
+            <select class="qty" id="qty2">
+                <option value="1">1</option>
+                 <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+
+        </div>
+               <div class="price">price:<span id="price2">800</span></div>
+            <div class="title" onclick="addcart(2)"> AddItem</div>
+             <div class="remove" id="rb2"style ="display:none" onclick="remove(2)">Remove</div>
+           <div class="title">addeditem=<span id="item2">q2</span></div>
+       </div>
+          <div class="image">
+             <div class="watch3"></div>
+            <div class="qty">
+               <select class="qty" id="qty3">
+                  <option value="1">1</option>
+                   <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+               </select>
+
+                 </div>
+              <div class="price">price:<span id="price3">600</span></div>
+              <div class="title" onclick="addcart(3)"> AddItem</div>
+                  <div class="remove" id="rb3"style ="display:none" onclick="remove(3)">Remove=</div>
+                    <div class="title">addeditem:<span id="item3">q3</span></div>
+   </div>
+       </div> <div id="cart" class="cart">0</div>
+
+        <div class="total">Total Price: <span id="totalprice">0</span> </div>
+    </div>
+
+
+    <script>
+        let itemq1=0;
+        let itemq2=0;
+        let itemq3=0;
+       function addcart(a) { 
+        let qty;
+        let price; 
+        if(a==1){
+            qty=Number(document.getElementById("qty1").value);
+            itemq1 += qty;
+            price= Number(document.getElementById("price1").innerHTML)
+            price=qty*price;
+            document.getElementById("qty1").innerHTML= itemq1;
+            document.getElementById("rb1").style.visibility="visible";
+            document.getElementById("item1").style.visibility="visible";
+            document.getElementById("item1").innerHTML=itemq1;
+        }
+        
+        if(a==2){
+            qty=Number(document.getElementById("qty2").value);
+            itemq2 += qty;
+            price=Number(document.getElementById("price2").innerHTML)
+            price=qty*price;
+            document.getElementById("qty2").innerHTML= itemq2;
+            document.getElementById("rb2").style.visibility="visible";
+            document.getElementById("item2").style.visibility="visible";
+            document.getElementById("item2").innerHTML=itemq2;
+        }
+        if(a==3){
+            qty=Number(document.getElementById("qty3").value);
+            itemq3 += qty;
+            price=Number(document.getElementById("price3").innerHTML)
+            price=qty*price;
+            document.getElementById("qty3").innerHTML= itemq3;
+            document.getElementById("rb3").style.visibility="visible";
+            document.getElementById("item3").style.visibility="visible";
+            document.getElementById("item3").innerHTML=itemq3;
+        }
+        let oldprice=Number(document.getElementById("totalprice").innerHTML)
+        let pastvalue=document.getElementById("cart").innerHTML;
+        qty=Number(qty);
+        pastvalue=Number(pastvalue);
+        document.getElementById("cart").innerHTML=pastvalue+qty;
+        document.getElementById(totalprice).innerHTML=price+oldprice;
+    }
+      function remove(a){
+        let qty;
+        let price;
+        if(a==1){
+            qty=Number(document.getElementById("qty1").value);
+
+            price=Number(document.getElementById("price1").innerHTML)
+            item1--;
+
+        }
+
+
+      }
+</script>
+
+    
+</body>
+</html>
