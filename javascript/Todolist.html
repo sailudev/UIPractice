@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+    <style>
+        ul{
+        list-style-type:none ;
+        padding: 0;
+        }
+       li{
+        margin-bottom: 10px;
+       }
+    </style>
+    <script>
+        var serialNumber = 1;
+
+        function addtask() {
+            var taskinput = document.getElementById("taskinput");
+            var tasklist = document.getElementById("tasklist");
+
+            if (taskinput.value.trim() === "") {
+                alert("Please enter a valid task.");
+                return;
+            }
+           var listitemHTML=`<li >${serialNumber}.${taskinput.value} <button onclick="removeTask(${serialnumbe})">Remove</button></li>`;
+           serialNumber++;
+           tasklist.innerHTML += listitemHTML;
+          
+           taskinput.value="";
+           
+           function removeTask(serial) {
+    
+          var taskListItem = document.getElementById(`task-${serial}`);
+            taskListItem.remove();
+         }
+           
+        }
+    </script>
+</head>
+<body>
+    <div class="task">
+      <center>  <h2> To Do list</h2>
+        <input type="text" id ="taskinput" placeholder=" enter yourtask ">
+        <button onclick="addtask()">Add</button>
+        
+        <ul id="tasklist"></ul>
+        
+      </center>
+    </div>
+</body>
+</html>

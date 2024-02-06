@@ -1,0 +1,29 @@
+var serialNumber = 1;
+
+function addTask() {
+    var taskInput = document.getElementById("taskinput");
+    var taskList = document.getElementById("tasklist");
+
+    if (taskInput.value.trim() === "") {
+        alert("Please enter a valid task.");
+        return;
+    }
+
+    // Create a new list item HTML
+    var listItemHTML = `<li id="task-${serialNumber}">${serialNumber}. ${taskInput.value} <button onclick="removeTask(${serialNumber})">Remove</button></li>`;
+
+    // Add the new list item HTML to the task list
+    taskList.innerHTML += listItemHTML;
+
+    // Increment the serial number
+    serialNumber++;
+
+    // Clear the input field
+    taskInput.value = "";
+}
+
+function removeTask(serial) {
+    // Remove the corresponding list item based on the serial number
+    var taskListItem = document.getElementById(`task-${serial}`);
+    taskListItem.remove();
+}
