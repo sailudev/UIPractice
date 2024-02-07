@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slideimages</title>
+    <style>
+        
+    .slider-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      overflow: hidden;
+    }
+  
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+  
+    .slide {
+      min-width: 100%;
+    }
+  
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+  
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .dot {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #bbb;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  
+    .dot.active {
+      background-color: #333;
+    }
+  
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      outline: none;
+      z-index: 1;
+    }
+  
+    .prev {
+      left: 0;
+    }
+  
+    .next {
+      right: 0;
+    }
+    </style>
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+       const dots = document.querySelectorAll('.dot');
+
+  showSlide(slideIndex);
+
+  function showSlide(index) {
+    if (index < 0) {
+      slideIndex = slides.length - 1;
+    } else if (index >= slides.length) {
+      slideIndex = 0;
+    } else {
+      slideIndex = index;
+    }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = 'none';
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove('active');
+    }
+
+    slides[slideIndex].style.display = 'block';
+    dots[slideIndex].classList.add('active');
+  }
+
+  function prevSlide() {
+    showSlide(slideIndex - 1);
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex + 1);
+  }
+
+  function goToSlide(index) {
+    showSlide(index);
+  }
+
+    </script>
+</head>
+<body>
+    <div class="slider-container">
+    <div class="slider">
+        <div class="slide"><img src="nature.jpg" alt="nature"></div>
+        <div class="slide"> <img src="nature1.jpg" alt="nature1"></div>
+        <div class="slide"><img src="nature2.jpg" alt="nature2"></div>
+        <div class="slide"> <img src="nature3.jpg" alt="nature3"></div>
+        <div class="slide"> <img src="image1.jpg" alt="image"></div>
+        <div class="slide"><img src="image2.jpg" alt="image2"> </div>
+        <div class="slide"> <img src="image3.jpg" alt="image"> </div>
+        </div>
+        <button  class="prev" onclick="prevslide()"><</button>
+        <button  class="next" onclick="nextslide()">></button>
+    </div>
+    <div class="dots"  id="dots-container">
+        <span class="dot" onclick="gotoslide(0)"></span>
+        <span class="dot" onclick="gotoslide(1)"></span>
+        <span class="dot" onclick="gotoslide(2)"></span>
+        <span class="dot" onclick="gotoslide(3)"></span>
+        <span class="dot" onclick="gotoslide(4)"></span>
+        <span class="dot" onclick="gotoslide(5)"></span>
+        <span class="dot" onclick="gotoslide(6)"></span>
+
+    </div>
+</body>
+</html>
