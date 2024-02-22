@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .circle1{
+          position: absolute;
+            width:200px;
+            height: 200px;
+            border:3px;
+            border-radius: 50%;
+            background-color: #892d2d;
+           color:brown;
+            left:5px;
+            top: 150px;
+
+        }
+        .circle2{
+            position:absolute;
+            width:200px;
+            height:200px;
+            border:3px;
+            border-radius: 50%;
+            background-color: blue;
+            color: blue;
+            right:5px;
+            top :  50px;
+        
+        }
+    
+    </style>
+    <script>
+        function fun1(){
+        document.getElementById("circle1").style.left="900px";
+        document.getElementById("circle1").style.transition=".6s";  
+        document.getElementById("circle1").style.transform="scale(.5s)";  
+            
+            
+        }
+        function fun2(){
+        document.getElementById("circle2").style.right="1000px";
+        document.getElementById("circle2").style.transition=".6s";  
+        document.getElementById("circle2").style.transform="scale(.5s)";  
+            
+            
+        }
+    </script>
+</head>
+<body>
+    <div class ="circle1" id="circle1"> </div>
+    <button  id= "right"onclick="fun1()">right</button>
+    <div class="circle2" id="circle2"></div>
+    <button id="left" onclick="fun2()">left</button>
+</body>
+</html>

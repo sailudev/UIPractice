@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>images</title>
+    <script>
+        function fun1(){
+            document.getElementById('image1').src="img9.jpg";
+            document.getElementById('image1').width=200 ;
+            document.getElementById('image1').height=100;
+            document.getElementById('image2').src="img13.jpg";
+            document.getElementById('image2').width=200;
+            document.getElementById('image2').width=100;
+        }
+        function fun2(){
+            document.getElementById('image1').src="imag13.jpg";
+            document.getElementById('image1').width=200;
+            document.getElementById('image1').height=200;
+            document.getElementById('image2').src="img9.jpg";
+            document.getElementById('image2').width=200;
+            document.getElementById('image2').height=100;
+        }
+
+    </script>
+</head>
+<body>
+    <img id="image1"src="img13.jpg" width="100px" height="100px">
+    <img id="image2" src="img9.jpg" width="100px" height="100px">
+    <button onclick="fun1()">button</button>
+    <button onclick="fun2()">button1</button>
+</body>
+</html>

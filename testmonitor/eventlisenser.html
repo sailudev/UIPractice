@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+</head>
+<body>
+    <div id="parent">parent
+        <p id="child1">I am Child1</p>
+    </div>
+    
+    <button onclick="createChild2()">Click To Create Child2</button>
+
+    <script>
+        function createChild2(){
+      var parent=document.getElementById('parent');
+      var child2=document.createElement("p");
+    var text2=document.createTextNode("I AM Children2");
+           child2.appendChild(text2);
+            parent.appendChild(child2);
+            var child1=document.getElementById("child1");
+            parent.removeChild(child1);
+
+
+    }
+    </script>
+</body>
+</html>

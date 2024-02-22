@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mode</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .header{
+            display: flex;
+    
+             }
+       .nav ul li{
+        display: inline;
+        
+       }
+       .row4{
+        display: flex;
+        margin-left: 150px;
+       }
+       .nav ul li a{
+        text-decoration: none;
+        margin-left: 15px;
+        
+       }
+       .row1{
+        
+        margin-top: 50px;
+        margin-left: 20px;
+       }
+       .bann{
+        
+        color: white;
+        padding: 20px;
+        margin-left: 50px;
+        
+        
+       }
+       .row2{
+        background-color: rgb(162, 202, 202);
+        display: flex;
+        margin-left: 20px;
+    
+       }
+       .button1{
+        
+       margin-left: 50%;
+        top:  50px;
+        transform: translateY(-50%);
+        z-index: 999;
+       }
+      .button{
+        display: block;
+       background-color: lightblue;
+       color: white;
+       padding: 5px 10px;
+       margin-bottom: 10px;
+       text-align: center;
+       text-decoration: none;
+       border-radius: 5px;
+      cursor: pointer;
+      }
+      body.dark-mode {
+        background-color: #e5e5b0;
+        color: #0c0b0b;
+      }
+      
+    body.dark-mode .nav ul li a {
+        color: #1a1515;
+    }
+    body.dark-mode .button {
+        background-color: #5a5555;
+    }
+    .row3 {
+     display: flex;
+     margin-left: 20px;
+     padding: 20px
+    }
+   .image2{
+    padding: 70px;
+    margin-left: 50px;
+   }
+   .team{
+    margin-left: 150px;
+   }
+    </style>
+</head>
+<body>
+    <div  class="container">
+        <div class="row1">
+            <div class="header">
+                <div class="logo"> <img src="logo.jpg" width="100px" height="100px"></div>
+                <div class="nav">
+                    <ul>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="">Service</a></li>
+                        <li><a href="">Aboutus</a></li>
+                        <li><a href="">Home</a></li>
+                                    
+                    </ul>
+                </div>
+                <div class="button1">
+                   <button class="button" onclick="toggleMode('light')">lightMode</button>
+                    <button class="button" onclick="toggleMode('dark')">DarkMode</button>
+                    
+
+                </div>
+            </div>
+
+        </div>
+        <div class="row2">
+            <div class="text">
+                <p>15 years of experience in web development and digital marketing solutions</p>
+                <br>
+                <h2>Web Development Service Provider</h2>
+                <br>
+                <h5>Creating user-friendly and professional web applications which serve both business and user needs</h5>
+            </div>
+            
+            <div class="bann">
+                <div class="ban"> <img src="img9.jpg" width="680px"heght="550px"></div>
+            </div>
+
+        </div>
+        <div class="row3">
+            <div class="image1"><img src="rudrasa.png" width="450px" height="350px"></div>
+            <div class="image2">
+                <div>
+                    <h4>.....About Web solutions</h4>
+                    <br>
+                    <h1>We’re Enthusiastic and Creative</h1> 
+                    <br>
+                    <p>Our web development company specializes the professional creation unique sites.
+                        <br>
+                        <p> Our team constantly monitors the emergence of new technologies that<br>
+                         </p>
+                        <p> we are not afraid to implement in web projects, making them modern and<br> </p>
+                        <p> high-tech. We create only selling websites – this is an achievement <br></p> 
+                         <p>by drawing the design and working out usability.</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="row4">
+            <div class="team"><img src="rudrasa2.png" width="150px"height="250px"></div>
+            <div class="team"><img src="rudrasa3.png" width="150px" height="150px"></div>
+            </div>
+
+
+        </div>
+    </div>  
+    <script>
+        function toggleMode(mode) {
+    const body = document.body;
+    if (mode === 'dark') {
+      body.classList.add('dark-mode');
+    } else {
+      body.classList.remove('dark-mode');
+    }
+  }
+    </script>  
+</body>
+</html>

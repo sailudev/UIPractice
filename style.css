@@ -1,4 +1,4 @@
-.circle1{
+.le1{
     width : 300px;
     height: 300px;
     border: 5px;
@@ -9,7 +9,7 @@
     top: 200px; 
     transition: 3.6s;
 }
-.circle2{
+.le2{
     width: 200px;
     height: 200px;
     border: 5px;
@@ -21,7 +21,7 @@
     transition: 3.5s;
 
 }
-.circle1:hover{
+.le1:hover{
     transform:scale(1.3);
     left:0;
    
@@ -29,7 +29,7 @@
     
     
 }
-.circle2:hover{
+.le2:hover{
     transform:scale(1.3);
     left:0;
    

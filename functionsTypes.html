@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Types</title>
+</head>
+<body>
+
+<script>
+    // Basic Function 
+
+    function funname(){
+        console.log("basic function");
+        document.write("basic function<br>")
+    }
+    funname();
+
+    // function with return value
+
+    function retfun(){
+        return 10 ;
+    }
+    let x= retfun();
+    document.write(x);
+    // Function with Parameters
+     
+    function parfun(x,y){
+        document.write("<br>");
+        document.write(x+y);
+
+    }
+
+    parfun(5,8);
+
+
+
+    // anonymous function
+
+    let a = function(){
+        document.write("Anonymous function");
+    }
+    a();
+
+    //Arrow Functions
+
+    let b= (x,y)=>
+    {
+        document.write("Arrow function with single statement");
+return x+y;
+}
+   let p= b(5,6);
+   document.write(p)
+
+   // callback function
+
+   function cbfun(cb){
+    document.write("Call Back Function");
+    cb();
+   }
+   cbfun(greet);
+   function greet(){
+    document.write("Greet Function");
+   }
+
+   // callback function with arrow function
+
+   let cbfun1 = (cb) => {
+    document.write("Call Back Function");
+    cb();
+   }
+   cbfun1(greet1);
+   let greet1 = ()=>{
+    document.write("Greet Function");
+   }
+
+
+</script>
+
+    
+</body>
+</html>

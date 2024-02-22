@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        .button{
+            width:100px;
+            height: 20px;
+            border: 1px solid  black;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <form id="signupform">
+    <label for="name">First Name:</label>
+    <input type="text" name="" id="firstname">
+    <input type="text " name=""  id="surname">
+    <div  id="nameerror" class="error"></div>
+    <label for ="mobile">Mobilenumber:</label>
+    <input type="text"  name="" id="mobilenumber">
+    <div id="mobilenumbererror" class="error"></div>
+    <label for="password">password:</label>  
+    <input type="text" name="" id="password">
+    <div id="passworderror " class="error"></div>
+    <label for="age">Age:</label>
+    <input type="text" name=" " id="age">
+    <div id="ageerror" class="error"></div>
+    <labe for="gender">Gender:</label>
+       <select id="gender" name="gender" required>
+        <option value="">select</option>
+        <option value="female">female</option>
+        <option value="male">male</option>
+        <option value="other">others</option>
+       </select>
+    <div id="gendererror" class="error"></div>
+    
+   <div  class="button" onclick="validate()">submit</div>
+    <p id="errormessage"></p>
+    </form>
+    <script>
+    
+       function validate()
+       {
+        try{
+        document.getElementById("errormessage").innerHTML= " ";
+        var error= " ";
+        var name= document.getElementById("firstname").value;
+        var mobile= document.getElementById("mobilenumber").value;
+        var password= document.getElementById("password").value;
+        var age= document.getElementById("age").value;
+        var gender= document.getElementById("gender").value;
+        if(name.length <=0){
+              error += "username should not be empty";
+        }
+        if(mobile.length<=0){
+            error +="mobile number should not be empty";
+        }
+        if(password.length<=0){
+            error +=" password should not be empty";
+        }
+        if(age.length<=0) {
+            error += "age should not be empty";
+        }
+        if(gender.length<=0){
+            error += "select any one should  not be empty";
+        }
+         throw error;
+
+    }
+       catch(obj){
+        document.getElementById("errormessage").innerHTML=obj;
+
+       }
+}
+
+    </script>
+</body>
+</html>

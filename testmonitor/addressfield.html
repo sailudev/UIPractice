@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>address</title>
+    <style>
+        .button{
+            width:50px;
+            height: 20px;
+            border: 3px solid black;
+        }
+        .button1{
+            width:120px;
+            height: 20px;
+            border: 3px solid black;
+        }
+    </style>
+    <script>
+        function validate(){
+          var nameerror= document.getElementById("nameerror").innerHTML=" ";
+          var fathernameerror= document.getElementById("fathernameerror").innerHTML=" ";
+          var HNoerror= document.getElementById("HNoerror").innerHTML="";
+          var landmarkerror= document.getElementById("landmarkerror").innerHTML="";
+           var cityerror= document.getElementById("cityerror").innerHTML="";
+            var stateerror=document.getElementById("stateerror").innerHTML="";
+           var Pincodeerror= document.getElementById("Pincodeerror").innerHTML="";
+
+           var Name= document.getElementById('Name').value;
+           var fathername= document.getElementById('fathername').value;
+           var HNo= document.getElementById('HNo').value;
+           var landmark= document.getElementById('landmark').value;
+         var city= document.getElementById('city').value;
+          var state=  document.getElementById('state').value;
+            var Pincode=document.getElementById('Pincode').value;
+            
+            if(name.length<=0){
+                document.getElementById('nameerror').innerText="name should notbe empty";
+            }
+            if(fathername.length<=0){
+                document.getElementById('fathernameerror').innerText="fathername should notbe empty";
+            }
+            if(HNo.length<=0){
+                document.getElementById('HNoerror').innerText="hno should notbe empty";
+            }
+            if(landmark.length<=0){
+                document.getElementById('landmarkerror').innerText="landmark should notbe empty";
+            }
+            if(city.length<=0){
+                document.getElementById('cityerror').innerText="city should notbe empty";
+            }
+            if(state.length<=0){
+                document.getElementById('stateerror').innerText="state should notbe empty";
+            }
+
+            if(Pincode.length<=0){
+                document.getElementById('Pincodeerror').innerText="pincode should notbe empty";
+            }
+
+        }
+        function addfield(){
+            var parent=document.getElementById('parent');
+            var child1=document.createElement('span');
+            var areafield=document.createTextNode('areafield');
+             child1.appendChild(areafield);
+             parent.appendChild(child1);
+             var child2=document.createElement('input');
+             child2.type="text";
+             parent.appendChild(child2);
+        }
+        function checkboxclicked(){
+           var checkbox=document.getElementById('mycheckbox');
+           if(checkbox.checked){
+            document.write("checkbox is checked");
+           }
+           else{
+            document.write('checkbox is not checked');
+           }
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <h2> Shipping address</h2>
+    <div>
+    Name:<input type="text" name="" id="Name">
+    <span class="nameerror" id="nameerror"></span>
+    fathername:<input type="text" name="" id="fathername">
+    <span class="fathernameerror" id="fathernameerror"></span>
+    </div>
+    <div>
+        H:No: <input type="text" name="" id="HNo">
+        <span class="HNoerror" id="HNoerror"></span>
+        Landmark:<input type="text" name="" id="landmark">
+        <span class="landmarkerror" id="landmarkerror"></span>
+        <button class="button1"  id=parent onclick="addfield()">addonemorefield</button>
+    </div>
+    <div>
+        city: <input type="text" name="" id="city">
+        <span class="cityerror" id="cityerror"></span>
+        state:<input type="text" name="" id="state">
+        <span class="stateerror" id="stateerror"></span>
+    </div>
+        <br>
+        <div>
+        Pincode:<input type="text" name="" id="Pincode">
+        <span class="Pincodeerror" id="Pincodeerror"></span>
+    </div>
+    <br>
+        <div>
+        <input type="checkbox" id="mycheckbox" onclick="checkboxclicked()">
+        <span class="shippingerror" id="checkerror"> sameasshippingaddress</span>
+        </div>
+        <br>
+   <div  class="address" id="residentialaddressblock" style="visibility: hidden;">
+
+        <h2> Residentialaddress</h2>
+       <div>
+          Name:<input type="text" name="" id="resName">
+          <span class="resnameerror" id="resnameerror"></span>
+           fathername:<input type="text" name="" id="resfathername">
+           <span class="resfathernameerror" id="resfathernameerror"></span>
+         </div>
+        <div>
+            H:No: <input type="text" name="" id="resHNo">
+            <span class="resHNoerror" id="resHNoerror"></span>
+            Landmark:<input type="text" name="" id="reslandmark">
+            <span class="reslandmarkerror" id="reslandmarkerror"></span>
+           
+        </div>
+        <div>
+            city: <input type="text" name="" id="rescity">
+            <span class="rescityerror" id="rescityerror"></span>
+            state:<input type="text" name="" id="resstate">
+            <span class="resstateerror" id="resstateerror"></span>
+        </div>
+            <br>
+        <div>
+            Pincode:<input type="text" name="" id="resPincode">
+            <span class="resPincodeerror" id="resPincodeerror"></span>
+        </div>
+    </div>
+
+    <div class="button"  onclick="validate()" >submit</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>plusorminus</title>
+    <script>
+        function plus(){
+            let stars = document.getElementById("star").innerHTML;
+               document.getElementById("star").innerHTML=stars +" * ";
+        }
+        function minus() {
+            var stars=document.getElementById("star").innerHTML;
+            document.getElementById("star").innerHTML=stars.slice(0,stars.length-3);
+
+        }
+
+    </script>
+</head>
+<body>
+    <button id="plus" onclick="plus()">plus one</button>
+    <button id="minus" onclick="minus()">minus one</button>
+    <div id="star"></div>
+</body>
+</html>
